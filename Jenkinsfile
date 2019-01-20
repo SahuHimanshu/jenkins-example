@@ -31,6 +31,17 @@ stage ('Deployment Stage') {
             }
         }
  
+        stage ('Deployment validate') {
+            steps {
+                withMaven(maven : 'Localmaven') {
+    
+
+                sh 'mvn validate'
+                }
+            }
+        }
+        
+        
         
     }
 }
