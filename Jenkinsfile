@@ -26,7 +26,7 @@ stage ('Deployment Stage') {
                 withMaven(maven : 'Localmaven') {
     
 
-                sh 'mvn deploy'
+                sh 'mvn install'
                 }
             }
         }
