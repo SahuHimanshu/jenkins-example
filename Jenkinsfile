@@ -32,7 +32,7 @@ pipeline {
          stage ('Deployment Validate') {
             steps {
                 withMaven(maven : 'Localmaven') {
-                    sh 'mvn Validate'
+                    sh 'mvn -v'
                 }
             }
         }
