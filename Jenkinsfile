@@ -28,5 +28,13 @@ pipeline {
                 }
             }
         }
+        
+         stage ('Deployment Validate') {
+            steps {
+                withMaven(maven : 'maven_3_5_2') {
+                    sh 'mvn Validate'
+                }
+            }
+        }
     }
 }
