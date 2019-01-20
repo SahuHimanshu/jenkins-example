@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_2') {
+                withMaven(maven : 'Localmaven') {
                     sh 'mvn clean compile'
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_2') {
+                withMaven(maven : 'Localmaven') {
                     sh 'mvn test'
                 }
             }
@@ -23,7 +23,7 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                withMaven(maven : 'maven_3_5_2') {
+                withMaven(maven : 'Localmaven') {
                     sh 'mvn deploy'
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
         
          stage ('Deployment Validate') {
             steps {
-                withMaven(maven : 'maven_3_5_2') {
+                withMaven(maven : 'Localmaven') {
                     sh 'mvn Validate'
                 }
             }
